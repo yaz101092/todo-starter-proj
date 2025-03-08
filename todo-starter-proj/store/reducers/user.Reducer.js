@@ -1,5 +1,6 @@
 export const SET_USER = 'SET_USER'
-export const INCREASE_BALANCE = "INCREASE_BALANCE";
+export const INCREASE_BALANCE = "INCREASE_BALANCE"
+export const UPDATE_USER_PREFS = 'UPDATE_USER_PREFS'
 
 const initialBalance = 10000;
 const initialState = {
@@ -13,7 +14,8 @@ export function userReducer(state = initialState, action = {}) {
                 ...state,
                 loggedInUser: action.user ? { 
                     ...action.user,
-                    balance: Number(action.user.balance) || initialBalance 
+                    balance: Number(action.user.balance) || initialBalance ,
+                    prefs: action.user.prefs || { color: 'black', bgColor: 'white' }
                 } : null
             };
 
@@ -31,6 +33,16 @@ export function userReducer(state = initialState, action = {}) {
                     ]
                 }
             };
+                
+        case UPDATE_USER_PREFS:
+            if (!state.loggedInUser) return state;
+                return {
+                    ...state,
+                    loggedInUser: {
+                        ...state.loggedInUser,
+                        prefs: action.prefs
+                    }
+                };
 
         default:
             return state;

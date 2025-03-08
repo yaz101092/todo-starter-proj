@@ -160,4 +160,13 @@ export function increaseBalance(amount, txt) {
     };
 }
 
+// export const updateUserDetails = (details) => ({
+//     type: 'UPDATE_USER_DETAILS',
+//     payload: details,
+//   });
+  
+//   export const fetchUserActivities = (userId) => ({
+//     type: 'FETCH_USER_ACTIVITIES',
+//     payload: userId,
+//   });
 

@@ -51,7 +51,7 @@ export function TodoPreview({ todo, onToggleTodo }) {
                 Todo: {todo.txt}
             </h2>
             <h4>Todo Importance: {todo.importance}</h4>
-            <p>Balance: ${user ? user.balance : 10000}</p> {/* ✅ בדיקה שהמשתמש קיים */}
+            {/* <p>Balance: ${user ? user.balance : 10000}</p> ✅ בדיקה שהמשתמש קיים */}
         </article>
     );
 }
